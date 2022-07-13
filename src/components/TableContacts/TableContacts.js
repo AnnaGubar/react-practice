@@ -1,12 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Avatar from 'react-avatar';
 import contactsSelectors from '../../redux/contacts/contacts-selectors';
+import {removeContact} from '../../redux/contacts/contacts-slice';
 
 export const TableContacts = () => {
-  
   const tableHeaders = ['№', 'avatar', 'name', 'age', 'status', 'option'];
   const contacts = useSelector(contactsSelectors.getContacts);
-  console.log("⭐ ~ contacts", contacts)
+  const dispatch = useDispatch();
 
   return (
     <table>
@@ -18,8 +18,9 @@ export const TableContacts = () => {
         </tr>
       </thead>
 
-      <tbody> 
-        {contacts && contacts.map((contact, index) => (
+      <tbody>
+        {contacts.contacts &&
+          contacts.contacts.map((contact, index) => (
             <tr key={contact.id}>
               <td>{index + 1}</td>
               <td>
@@ -29,7 +30,7 @@ export const TableContacts = () => {
               <td>{contact.age}</td>
               <td>{contact.status === 'yes' ? 'online' : 'offline'}</td>
               <td>
-                <button type="button">Delete</button>
+                <button type="button" onClick={()=>dispatch(removeContact(contact.id))}>Delete</button>
               </td>
             </tr>
           ))}

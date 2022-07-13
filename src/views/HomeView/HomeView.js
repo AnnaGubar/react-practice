@@ -1,3 +1,9 @@
+
+import {TableContacts} from '../../components/TableContacts/TableContacts'
+
 export const HomeView = () => {
-  return <div>HomeView</div>;
+
+  return (
+    <TableContacts/>
+  );
 };

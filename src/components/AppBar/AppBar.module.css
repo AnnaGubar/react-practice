@@ -1,5 +1,10 @@
+ul{
+  margin: 0;
+}
+
 .list {
   display: flex;
+  margin-bottom: 15px;
   list-style: none;
 }
 

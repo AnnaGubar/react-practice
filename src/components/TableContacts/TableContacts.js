@@ -2,6 +2,8 @@ import { useSelector,useDispatch } from 'react-redux';
 import Avatar from 'react-avatar';
 import contactsSelectors from '../../redux/contacts/contacts-selectors';
 import {removeContact} from '../../redux/contacts/contacts-slice';
+import { MdDelete} from 'react-icons/md';
+import s from './TableContacts.module.css';
 
 export const TableContacts = () => {
   const tableHeaders = ['№', 'avatar', 'name', 'age', 'status', 'option'];
@@ -9,7 +11,7 @@ export const TableContacts = () => {
   const dispatch = useDispatch();
 
   return (
-    <table>
+    <table className={s.table}>
       <thead>
         <tr>
           {tableHeaders.map(item => (
@@ -30,7 +32,7 @@ export const TableContacts = () => {
               <td>{contact.age}</td>
               <td>{contact.status === 'yes' ? 'online' : 'offline'}</td>
               <td>
-                <button type="button" onClick={()=>dispatch(removeContact(contact.id))}>Delete</button>
+                <button type="button" className={s.deleteBtn} onClick={()=>dispatch(removeContact(contact.id))}><MdDelete className={s.icon}/></button>
               </td>
             </tr>
           ))}

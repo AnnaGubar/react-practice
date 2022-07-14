@@ -13,7 +13,7 @@ export const AppBar = () => {
               isActive ? s['activeLink'] : s['link']
             }
           >
-            Home
+            Table
           </NavLink>
         </li>
         <li>
@@ -24,7 +24,7 @@ export const AppBar = () => {
               isActive ? s['activeLink'] : s['link']
             }
           >
-            Phonebook
+            Add to the table
           </NavLink>
         </li>
       </ul>

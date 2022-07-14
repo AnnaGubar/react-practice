@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getStatus } from '../../services/statusApi';
 import { addContact } from '../../redux/contacts/contacts-slice';
+import {FcApproval} from 'react-icons/fc';
 import s from './AddContactView.module.css';
 
 export const AddContactView = () => {
@@ -67,7 +68,7 @@ export const AddContactView = () => {
         onChange={handlerOnChange}
       />
 
-      <button type="submit">Add to the list</button>
+      <button type="submit" className={s.submitBtn}><FcApproval className={s.addIcon}/></button>
     </form>
   );
 };

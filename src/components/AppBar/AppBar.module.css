@@ -1,4 +1,4 @@
-ul{
+ul {
   margin: 0;
 }
 
@@ -12,13 +12,11 @@ li:first-child {
   margin-right: 20px;
 }
 
-.link{
+.link {
   text-decoration: none;
   color: #fff;
 }
 
 .activeLink {
-  composes: link;
-  color: #000;
-  font-weight: 800;
+  color: #bae2a0;
 }

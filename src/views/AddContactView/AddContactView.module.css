@@ -1,17 +1,31 @@
-.label{
-  display: block;
-}
 
 .form label{
-  margin-bottom: 10px;
+  margin-right: 5px;
 }
 
 .form input{
-  margin-bottom: 20px;
+  margin-right: 20px;
 }
 
-.form{
-  padding: 20px;
-  width: 240px;
-  border:1px solid #000 ;
+.addIcon {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  margin-top: -22px; 
+
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.submitBtn {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.submitBtn:hover svg {
+  width: 40px;
+  height: 40px;
+  margin-top: -25px; 
 }
